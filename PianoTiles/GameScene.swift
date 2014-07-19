@@ -22,7 +22,7 @@ class GameScene: SKScene {
     var tileWidth:Int = 0
     var tileHeight:Int = 0
     var tileSize = CGSize()
-    var tiles:String[] = []
+    var tiles:[String] = []
     var topRowY = CGFloat(0)
     var flipPosition = 0
     var milliseconds = 0.0
@@ -66,7 +66,7 @@ class GameScene: SKScene {
     
     //our random function to color one tile on each row black
     func randomColumn() -> Int {
-        var range = UInt32(0)..UInt32(self.numberOfColumns-1)
+        var range = UInt32(0)..<UInt32(self.numberOfColumns-1)
         return Int(range.startIndex + arc4random_uniform(range.endIndex - range.startIndex + 1))
     }
     
